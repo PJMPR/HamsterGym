@@ -1,48 +1,45 @@
 package Lalunaa.HamsterGym;
 
-public class Customer {
+public class Customer implements IHaveId{
 
-    private int id;
-    private String name;
-    private String surname;
-    
-    Customer()
-    {
-    	
-    }
+	private int id;
+	private String name;
+	private String surname;	
+	
+	public Customer() {
+	
+	}
 
-    
-   Customer(int id, String name, String surname)   {
-	   this.id = id;	   
-	   this.name = name;	   
-	   this.surname = surname;
-	   
-   }
-   
-   
-    public int getId() {
-        return id;
-    }
+	Customer(int id, String name, String surname, Activities customerActivities) {
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getSurname() {
-        return surname;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+	public String getSurname() {
+		return surname;
+	}
 
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	
 
 }

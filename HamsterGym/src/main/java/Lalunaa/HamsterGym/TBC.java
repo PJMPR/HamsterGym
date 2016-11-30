@@ -1,11 +1,8 @@
 package Lalunaa.HamsterGym;
 
 public class TBC extends Activities {
-	
 
-	
-	TBC()
-	{
+	TBC() {
 		setType("TBC");
 		setTrainer("Kamil Pawelec");
 		setDescription("Ćwiczenia ogólnorozwojowe, poprawiające kondycję fizyczną i ujędrniające wszystkie partie mięśniowe. Część główna poprzedzona jest intensywną rozgrzewką również na stepie. Połączenie pracy mięśni  ramion i nóg oraz zastosowanie dużej ilości powtórzeń sprzyja wyższej intensywności zajęć.");
@@ -13,16 +10,13 @@ public class TBC extends Activities {
 		setTime("17:00");
 		setDuration("60min");
 		setGroupSize(20);
-		
+
 	}
-	
-	
+
 	private int numberOfCustomers() {
-		
+
 		String numberOfCustmers = "SELECT count(*) FROM TBC";
-	    return this.getNumberOfCustomers();        
+		return this.getNumberOfCustomers();
 	}
-	
-	
-	
+
 }
