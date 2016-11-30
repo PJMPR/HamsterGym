@@ -19,6 +19,7 @@ import Lalunaa.HamsterGym.Activities;
 		private PreparedStatement getType;
 	    private PreparedStatement getTrainer;
 	    private PreparedStatement getDay;
+	    private PreparedStatement getTime;	    
 	    
 
 		public ActivitiesRepository(Connection connection, 
@@ -29,7 +30,8 @@ import Lalunaa.HamsterGym.Activities;
 		try{
 		    getType = connection.prepareStatement(getTypeSql());
 		    getTrainer = connection.prepareStatement(getTrainerSql());
-		    getDay = connection.prepareStatement(getDaySql());		    
+		    getDay = connection.prepareStatement(getDaySql());
+		    getTime = connection.prepareStatement(getTimeSql());
         }catch(SQLException e){
 		    e.printStackTrace();
         }
@@ -40,6 +42,7 @@ import Lalunaa.HamsterGym.Activities;
 		protected String getTypeSql(){return "SELECT * FROM activities where type = ?";}
 		protected String getTrainerSql(){return "SELECT * FROM activities where trainer=?";}
 		protected String getDaySql(){return "SELECT * FROM activities where day=?";}
+		protected String getTimeSql(){return "SELECT * FROM activities where time=?";}
 		
 
 			@Override

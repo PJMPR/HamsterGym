@@ -3,20 +3,30 @@ package Lalunaa.HamsterGym;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
 
-import dao.CustomerRepository;
+import dao.RepositoryCatalog;
 import dao.repositories.IRepositoryCatalog;
-import Lalunaa.HamsterGym.Customer;
+import dao.uow.IUnitOfWork;
+import dao.uow.UnitOfWork;
+
 
 public class App {
 	public static void main(String[] args) {
+		
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
-			CustomerRepository customerRepository = new CustomerRepository(connection, null, null);
+			
+		IUnitOfWork uow = new UnitOfWork(connection);
+		IRepositoryCatalog catalogOf = new RepositoryCatalog(connection, uow);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+    	
+    	//List<Customer> customers = catalogOf.Customers().withName("janek");
+    	
+    	
 
 		
 	}

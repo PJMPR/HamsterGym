@@ -27,7 +27,7 @@ import Lalunaa.HamsterGym.Customer;
 		
 		try{
 			 getName = connection.prepareStatement(getNameSql());
-			   getSurname = connection.prepareStatement(getSurNameSql());  
+			 getSurname = connection.prepareStatement(getSurNameSql());  
         }catch(SQLException e){
 		    e.printStackTrace();
         }		
