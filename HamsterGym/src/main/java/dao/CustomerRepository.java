@@ -27,7 +27,7 @@ import Lalunaa.HamsterGym.Customer;
 		
 		try{
 			 getName = connection.prepareStatement(getNameSql());
-			 getSurname = connection.prepareStatement(getSurNameSql());  
+			 getSurname = connection.prepareStatement(getSurnameSql());  
         }catch(SQLException e){
 		    e.printStackTrace();
         }		
@@ -35,7 +35,7 @@ import Lalunaa.HamsterGym.Customer;
 		
 		
 		protected String getNameSql(){return "SELECT * FROM customers where name = ?";}
-		protected String getSurNameSql(){return "SELECT * FROM customers where surname=?";}
+		protected String getSurnameSql(){return "SELECT * FROM customers where surname=?";}
 
 		
 			@Override
@@ -51,15 +51,15 @@ import Lalunaa.HamsterGym.Customer;
 			}
 			
 			protected String insertSql() {
-				return "INSERT INTO customer(name, surname, customerActivities) VALUES (?,?,?)";
+				return "INSERT INTO customers(name, surname) VALUES (?,?)";
 			}
 			
 			protected String updateSql() {
-				return "UPDATE customer SET (name, surname, customerActivities)=(?,?,?) WHERE id=?";
+				return "UPDATE customers SET (name, surname)=(?,?) WHERE id=?";
 			}
 			
 			protected String deleteSql() {				
-				return "DELETE FROM customer WHERE id=?";
+				return "DELETE FROM customers WHERE id=?";
 			}
 			
 			protected String selectAllSql() {
@@ -68,16 +68,16 @@ import Lalunaa.HamsterGym.Customer;
 			
 			@Override
 			protected void setUpdate(Customer entity) throws SQLException {
-				update.setInt(1, entity.getId());
-				update.setString(2, entity.getName());
-				update.setString(3, entity.getSurname());								
+				
+				update.setString(1, entity.getName());
+				update.setString(2, entity.getSurname());								
 			}
 
 			@Override
 			protected void setInsert(Customer entity) throws SQLException {
-				update.setInt(1, entity.getId());
-				update.setString(2, entity.getName());
-				update.setString(3, entity.getSurname());				
+				
+				insert.setString(1, entity.getName());
+				insert.setString(2, entity.getSurname());				
 			}
 
 			private List<Customer> searchBy(String value){
