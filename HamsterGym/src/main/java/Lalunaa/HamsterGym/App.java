@@ -19,10 +19,25 @@ public class App {
 		one.setName("Damian");
 		one.setSurname("Nowak");
 		
+		Customer two = new Customer();
+		two.setName("Czarek");
+		two.setSurname("Kowalski");		
+		
 		Activities abt = new ABT();
 		
+		Activities joga = new Joga();
 		
-					
+		Activities powerPump = new PowerPump();
+		
+		Activities salsation = new Salsation();
+		
+		Activities step = new Step();
+		
+		Activities stretching = new Stretching();
+		
+		Activities tbc = new TBC();
+		
+							
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
 			
@@ -30,13 +45,20 @@ public class App {
 		IRepositoryCatalog catalogOf = new RepositoryCatalog(connection, uow);
 		
 				
-		catalogOf.Customers().add(one);
-
+		catalogOf.Customers().add(one);		
+		catalogOf.Customers().add(two);
+		
 		catalogOf.Activities().add(abt);
+		catalogOf.Activities().add(joga);
+		catalogOf.Activities().add(powerPump);
+		catalogOf.Activities().add(salsation);
+		catalogOf.Activities().add(step);
+		catalogOf.Activities().add(stretching);
+		catalogOf.Activities().add(tbc);
 		
 		catalogOf.save();
-	
 		
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

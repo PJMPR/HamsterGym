@@ -5,7 +5,7 @@ public class Stretching extends Activities {
 	Stretching() {
 		setType("Stretching");
 		setTrainer("Karolina Polna");
-		setDescription("Zajęcia poświęcone rozciąganiu wszystkich partii mięśniowych, prowadzone przy spokojnej, relaksacyjnej  muzyce. Dzięki regularnemu rozciąganiu ciało staje się bardziej elastyczne i przygotowane do efektywnego wykonywania ćwiczeń na innych zajęciach. Stretching doskonale likwiduje przykurcze mięśniowe, które mogą być spowodowane, np. siedzącym trybem pracy czy treningiem siłowym. Zajęcia dla wszystkich.");
+		setDescription("Zajęcia poświęcone rozciąganiu wszystkich partii mięśniowych, prowadzone przy spokojnej, relaksacyjnej  muzyce.");
 		setDay(Day.Sobota);
 		setTime("18:30");
 		setDuration("45min");

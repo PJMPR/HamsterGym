@@ -58,7 +58,7 @@ import Lalunaa.HamsterGym.Customer;
 				return "UPDATE customers SET (name, surname)=(?,?) WHERE id=?";
 			}
 			
-			protected String deleteSql() {				
+			protected String deleteSql(int id) {				
 				return "DELETE FROM customers WHERE id=?";
 			}
 			

@@ -6,7 +6,7 @@ public class Joga extends Activities {
 		
 		setType("Joga");
 		setTrainer("Eliza Kózka");
-		setDescription("Zajmuje się rozwojem człowieka zarówno w sensie fizycznym, psychicznym jak i duchowym. Pozwala integrować myślenie, emocje i działanie, prowadzi do osiągnięcia równowagi i harmonii, po za tym jest doskonałą metodą pracy nie tylko z ciałem. Buduje piękną sylwetkę, poprawia stan zdrowia, działa również kojąco na nerwy, wycisza umysł. Dodają energii i siły działaniom w codziennym życiu.");
+		setDescription("Zajmuje się rozwojem człowieka zarówno w sensie fizycznym, psychicznym jak i duchowym. Buduje piękną sylwetkę, poprawia stan zdrowia, działa również kojąco na nerwy, wycisza umysł. Dodają energii i siły działaniom w codziennym życiu.");
 		setDay(Day.Wtorek);
 		setTime("19:00");
 		setDuration("45min");
