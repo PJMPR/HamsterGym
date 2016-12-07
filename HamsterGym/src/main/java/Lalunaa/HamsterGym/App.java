@@ -37,6 +37,10 @@ public class App {
 		
 		Activities tbc = new TBC();
 		
+		Trainer a = new Trainer();
+		a.setName("Dawid");
+		a.setSurname("Nowy");
+		
 							
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
@@ -55,6 +59,8 @@ public class App {
 		catalogOf.Activities().add(step);
 		catalogOf.Activities().add(stretching);
 		catalogOf.Activities().add(tbc);
+		
+		catalogOf.Trainers().add(a);
 		
 						
 		catalogOf.save();

@@ -4,6 +4,7 @@ import dao.mappers.EnumDictionaryMapper;
 
 import dao.mappers.CustomerMapper;
 import dao.mappers.ActivitiesMapper;
+import dao.mappers.TrainerMapper;
 import dao.repositories.*;
 import dao.uow.IUnitOfWork;
 
@@ -37,5 +38,10 @@ public class RepositoryCatalog implements IRepositoryCatalog {
 	public IActivitiesRepository Activities() {
 		return new ActivitiesRepository(connection, new ActivitiesMapper(), uow);
 	
+	}
+
+	public ITrainerRepository Trainers() {
+		
+		return new TrainerRepository(connection, new TrainerMapper(), uow);
 	}
 }
