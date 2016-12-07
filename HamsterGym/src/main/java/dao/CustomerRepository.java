@@ -18,6 +18,7 @@ import Lalunaa.HamsterGym.Customer;
 		
 		private PreparedStatement getName;
 		private PreparedStatement getSurname;
+		
 	    
 
 		public CustomerRepository(Connection connection, 
@@ -27,8 +28,8 @@ import Lalunaa.HamsterGym.Customer;
 		
 		try{
 			 getName = connection.prepareStatement(getNameSql());
-			 getSurname = connection.prepareStatement(getSurnameSql());  
-        }catch(SQLException e){
+			 getSurname = connection.prepareStatement(getSurnameSql()); 
+			 }catch(SQLException e){
 		    e.printStackTrace();
         }		
 		}	
@@ -36,7 +37,7 @@ import Lalunaa.HamsterGym.Customer;
 		
 		protected String getNameSql(){return "SELECT * FROM customers where name = ?";}
 		protected String getSurnameSql(){return "SELECT * FROM customers where surname=?";}
-
+		
 		
 			@Override
 			protected String createTableSql() {
@@ -70,14 +71,16 @@ import Lalunaa.HamsterGym.Customer;
 			protected void setUpdate(Customer entity) throws SQLException {
 				
 				update.setString(1, entity.getName());
-				update.setString(2, entity.getSurname());								
+				update.setString(2, entity.getSurname());	
+				
 			}
 
 			@Override
 			protected void setInsert(Customer entity) throws SQLException {
 				
 				insert.setString(1, entity.getName());
-				insert.setString(2, entity.getSurname());				
+				insert.setString(2, entity.getSurname());		
+					
 			}
 
 			private List<Customer> searchBy(String value){
@@ -103,6 +106,12 @@ import Lalunaa.HamsterGym.Customer;
 			    public List<Customer> withSurname(String surname) {
 			        return searchBy(surname);
 			    }
+			    
+			   
+
+				public List<Customer> withActivities(Object activities) {
+					return searchBy((String)activities);
+				}
 				
 			}	
 		

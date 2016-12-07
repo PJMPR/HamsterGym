@@ -5,8 +5,7 @@ public class Customer implements IHaveId{
 	private int id;
 	private String name;
 	private String surname;	
-	
-	
+		
 
 
 	public int getId() {
@@ -33,6 +32,8 @@ public class Customer implements IHaveId{
 		this.surname = surname;
 	}
 
+
+	
 	
 
 }

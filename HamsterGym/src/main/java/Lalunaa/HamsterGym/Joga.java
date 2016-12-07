@@ -11,8 +11,11 @@ public class Joga extends Activities {
 		setTime("19:00");
 		setDuration("45min");
 		setGroupSize(25);
+		
 
 	}
+	
+	
 	
 	public void info() {
 		super.info();
@@ -23,5 +26,7 @@ public class Joga extends Activities {
 		String numberOfCustmers = "SELECT count(*) FROM Joga";
 		return this.getNumberOfCustomers();
 	}
+	
+	
 
 }

@@ -3,6 +3,7 @@ package dao.mappers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Lalunaa.HamsterGym.Activities;
 import Lalunaa.HamsterGym.Customer;
 
 public class CustomerMapper implements IMapResultSetIntoEntity<Customer>{

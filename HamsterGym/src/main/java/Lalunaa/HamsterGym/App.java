@@ -18,7 +18,7 @@ public class App {
 		Customer one = new Customer();
 		one.setName("Damian");
 		one.setSurname("Nowak");
-		
+				
 		Customer two = new Customer();
 		two.setName("Czarek");
 		two.setSurname("Kowalski");		
@@ -56,6 +56,7 @@ public class App {
 		catalogOf.Activities().add(stretching);
 		catalogOf.Activities().add(tbc);
 		
+						
 		catalogOf.save();
 		
 			
