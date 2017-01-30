@@ -4,7 +4,6 @@ package Lalunaa.HamsterGym;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
 
 import dao.RepositoryCatalog;
 import dao.repositories.IRepositoryCatalog;
@@ -41,6 +40,10 @@ public class App {
 		a.setName("Dawid");
 		a.setSurname("Nowy");
 		
+		Trainer b = new Trainer();
+		b.setName("Rafał");
+		b.setSurname("Kowalski");
+		
 							
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
@@ -61,6 +64,7 @@ public class App {
 		catalogOf.Activities().add(tbc);
 		
 		catalogOf.Trainers().add(a);
+		catalogOf.Trainers().add(b);
 		
 						
 		catalogOf.save();
@@ -69,10 +73,7 @@ public class App {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-    	
-    	
-    	
+		 	
     	
 
 		

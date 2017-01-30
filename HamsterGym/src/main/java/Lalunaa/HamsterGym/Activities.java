@@ -1,18 +1,33 @@
 package Lalunaa.HamsterGym;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="activities")
+@NamedQueries({
+       @NamedQuery(name = "activities.all", query = "SELECT a FROM Activities a"),
+       @NamedQuery(name = "activities.id", query = "SELECT a FROM Activities a WHERE a.id=:id")
+})
 public class Activities implements IHaveId {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String type;
-	private String trainer;
-	private Day day;
+	@ManyToOne
+	private Trainer trainer;
+	private String day;
 	private String time;
 	private String duration;
 	private int groupSize;
 	private String description;
-	private int numberOfCustomers;
-	
-	
-	private int id;
 	
 
 	public void info() {
@@ -24,15 +39,6 @@ public class Activities implements IHaveId {
 		System.out.println("Godzina rozpoczęcia: " + time);
 		System.out.println("Czas trwania: " + duration);
 		System.out.println("Wielkość grupy: " + groupSize);
-		System.out.println("Obecnie zapisanych: " + numberOfCustomers);
-	}
-
-	public int getNumberOfCustomers() {
-		return numberOfCustomers;
-	}
-
-	public void setNumberOfCustomers(int numberOfCustomers) {
-		this.numberOfCustomers = numberOfCustomers;
 	}
 
 	public String getType() {
@@ -43,19 +49,19 @@ public class Activities implements IHaveId {
 		this.type = type;
 	}
 
-	public String getTrainer() {
+	public Trainer getTrainer() {
 		return trainer;
 	}
 
-	public void setTrainer(String trainer) {
+	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
 
-	public Day getDay() {
+	public String getDay() {
 		return day;
 	}
 
-	public void setDay(Day day) {
+	public void setDay(String day) {
 		this.day = day;
 	}
 

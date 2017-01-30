@@ -4,19 +4,14 @@ public class Stretching extends Activities {
 
 	Stretching() {
 		setType("Stretching");
-		setTrainer("Karolina Polna");
+		//setTrainer("Karolina Polna");
 		setDescription("Zajęcia poświęcone rozciąganiu wszystkich partii mięśniowych, prowadzone przy spokojnej, relaksacyjnej  muzyce.");
-		setDay(Day.Sobota);
+		//setDay(Day.Sobota);
 		setTime("18:30");
 		setDuration("45min");
 		setGroupSize(25);
 
 	}
 
-	private int numberOfCustomers() {
-
-		String numberOfCustmers = "SELECT count(*) FROM Stretching";
-		return this.getNumberOfCustomers();
-	}
 
 }

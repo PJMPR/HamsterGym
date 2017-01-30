@@ -13,12 +13,10 @@ public class ActivitiesMapper implements IMapResultSetIntoEntity<Activities>{
 		Activities activities = new Activities();
 		activities.setId(rs.getInt("id"));
 		activities.setType(rs.getString("type"));
-		activities.setTrainer(rs.getString("trainer"));
-		activities.setDay((Day) rs.getObject("day"));
+		activities.setDay(rs.getString("day"));
 		activities.setTime(rs.getString("time"));
 		activities.setDuration(rs.getString("duration"));
 		activities.setGroupSize(rs.getInt("groupSize"));
-		activities.setNumberOfCustomers(rs.getInt("numberOfCustomers"));
 		return activities;
 	}
 }
