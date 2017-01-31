@@ -30,7 +30,7 @@ public class activitiesServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		session.setAttribute("activities", activities);
-		response.sendRedirect("addCustomer.html");
+		response.sendRedirect("tafinal.jsp");
 	}
 
 }

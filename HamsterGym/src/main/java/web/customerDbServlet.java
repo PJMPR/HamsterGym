@@ -20,11 +20,11 @@ import dao.repositories.IRepositoryCatalog;
 import dao.uow.IUnitOfWork;
 import dao.uow.UnitOfWork;
 
-@WebServlet("/dbServlet")
-public class dbServlet extends HttpServlet {
+@WebServlet("/customerDbServlet")
+public class customerDbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public dbServlet() {
+    public customerDbServlet() {
         super();
     }
 
@@ -35,21 +35,13 @@ public class dbServlet extends HttpServlet {
 			IUnitOfWork uow = new UnitOfWork(connection);
 			IRepositoryCatalog catalog = new RepositoryCatalog(connection, uow);
 			HttpSession session = request.getSession();
-		    Trainer trainer = (Trainer) session.getAttribute("trainer");
-		    Activities activities = (Activities) session.getAttribute("activities");
-		   // Customer customer = (Customer) session.getAttribute("customer");
-			catalog.Trainers().add(trainer);
+		    
+		   Customer customer = (Customer) session.getAttribute("customer");
+			
+			catalog.Customers().add(customer);
 			catalog.save();
-			int trainerId = catalog.Trainers().getLastId();
-			trainer.setId(trainerId);
-			activities.setTrainer(trainer);
-			catalog.Activities().add(activities);
-			catalog.save();
-			//catalog.Customers().add(customer);
-			//catalog.save();
-			session.removeAttribute("trainer");
-		    session.removeAttribute("activities");
-		    //session.removeAttribute("customer");
+			
+		    session.removeAttribute("customer");
 			response.sendRedirect("index.html");
 		} catch (SQLException e) {
 			e.printStackTrace();

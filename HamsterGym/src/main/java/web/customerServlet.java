@@ -24,7 +24,7 @@ public class customerServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		session.setAttribute("customer", customer);
-		response.sendRedirect("final.jsp");
+		response.sendRedirect("cfinal.jsp");
 	}
 
 }

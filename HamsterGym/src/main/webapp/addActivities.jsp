@@ -11,12 +11,13 @@
 </head>
 <body>
 <div>
-
+<body background="https://zapodaj.net/images/068581a0cd430.jpg" bgproperties="fixed"><br/>
 <form enctype="text/plain">
 
-		Nazwa: <br />
+<img src="https://zapodaj.net/images/4e317d5aaa222.png" alt="Dane Zajęć" /><br/><br/>
+		<img src="https://zapodaj.net/images/2f29b1b91d415.png" alt="Nazwa" /> <br/>
 				<input name = "name" value = "" /> <br />
-    	Dzień tygodnia: <br />
+    	<img src="https://zapodaj.net/images/779aeb478ec65.png" alt="Dzień Tygodnia" /> <br/>
                 <select name="day">
                         <%
                         try {
@@ -29,16 +30,16 @@
                             e.printStackTrace();
                         }
                         %>
-                    </select> </br>
-		Godzina: <br />
+                    </select> <br/>
+		<img src="https://zapodaj.net/images/58e8f18e25db5.png" alt="Godzina" /><br/>
 				<input name = "time" value = "" /> <br />
-		Czas trwania:		
+		<img src="https://zapodaj.net/images/7563bf1204a54.png" alt="Czas Trwania" />	<br/>
 				<input name = "duration" value = "" /> <br />
-		Rozmiar grupy: <br />
+		<img src="https://zapodaj.net/images/d999a01da244a.png" alt="Rozmiar Grupy" /><br/>
 				<input name = "groupSize" value = "" /> <br />
                    
-		Opis: <br />
-				<input name = "description" value = "" /> <br />
+		<img src="https://zapodaj.net/images/a675cad215213.png" alt="Opis" /><br/>
+				<input type="text" name = "description" value = "" /> <br /><br/><br/>
 				
 		<input type = "submit" formaction="activitiesServlet" value = "Utwórz!" /> <br />
         </form>              

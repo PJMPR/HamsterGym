@@ -1,4 +1,4 @@
-<%@page import="Lalunaa.HamsterGym.Customer"%>
+
 <%@page import="Lalunaa.HamsterGym.Activities"%>
 <%@page import="Lalunaa.HamsterGym.Trainer"%>
 <%@page import="java.util.List"%>
@@ -11,25 +11,25 @@
 <title></title>
 </head>
 <body>
+<body background="https://zapodaj.net/images/e123964962f81.jpg" bgproperties="fixed">
 	<%
 	    Trainer trainer = (Trainer) session.getAttribute("trainer");
 	    Activities activities = (Activities) session.getAttribute("activities");
-	    Customer customer = (Customer) session.getAttribute("customer");
+	    
 	%>
-	<h1>Zajęcia</h1>
+	<font color="white"><font face="Verdana"><br/>
+	<b><h1>Zajęcia</h1></b>
 	<h2>Nazwa: <%=activities.getType() %></h2>
 	<h2>Opis: <%=activities.getDescription() %></h2>
 	<h2>Dzień tygodnia: <%=activities.getDay() %></h2>
 	<h2>Godzina rozpoczęcia: <%=activities.getTime() %></h2>
 	<h2>Czas trwania: <%=activities.getDuration() %></h2>
-	<h2>Wielkość grupy: <%=activities.getGroupSize() %></h2>
-	<h1>Trener</h1>
+	<h2>Wielkość grupy: <%=activities.getGroupSize() %></h2></br>
+	<b></b><h1>Trener</h1></b>
 	<h2>Imie: <%=trainer.getName() %></h2>
 	<h2>Nazwisko: <%=trainer.getSurname() %></h2>
-	<h1>Klient</h1>
-	<h2>Imie: <%=customer.getName() %></h2>
-	<h2>Nazwisko: <%=customer.getSurname() %></h2>
-	<form action="dbServlet" method="get">
+	</font></font>
+	<form action="dbServlet" method="get"><br/><br/>
 	<input type="submit" value="Zapisz">
 	</form>
 </body>

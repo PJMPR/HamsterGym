@@ -17,7 +17,7 @@ import Lalunaa.HamsterGym.Customer;
 
 
 
-@WebFilter(urlPatterns = {"/addEquipment.html","/equipmentServlet","/final.jsp"})
+@WebFilter(urlPatterns = {"/addEquipment.html","/equipmentServlet","/cfinal.jsp"})
 public class CustomerFilter implements Filter {
 
 	public CustomerFilter() {

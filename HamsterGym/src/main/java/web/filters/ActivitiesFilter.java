@@ -17,7 +17,7 @@ import Lalunaa.HamsterGym.Activities;
 
 
 
-@WebFilter(urlPatterns = {"/addEquipment.html","/equipmentServlet","/final.jsp"})
+@WebFilter(urlPatterns = {"/addEquipment.html","/equipmentServlet","/afinal.jsp"})
 public class ActivitiesFilter implements Filter {
 
 	public ActivitiesFilter() {
